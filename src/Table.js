@@ -29,7 +29,7 @@ const data = [
 
 const coloumns =[
     {
-        headerName:'Make', field:'make',
+        headerName:'Make', field:'make', checkboxSelection:true
     },
     {
         headerName:'Model', field:'model'
