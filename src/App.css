@@ -1,0 +1,17 @@
+
+.my-loading-overlay {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.my-no-rows-overlay {
+    font-weight: bold;
+    font-size: 30px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.my-spinner {
+    width: 100px;
+}
