@@ -1,33 +1,34 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
 import MyLoadingOverlay from "./myLoadingOverlay";
 import MyNoRowsOverlay from "./myNoRowsOverlay";
 
-const Table = () => {
-  const [rowData, setRowData] = useState();
 
-  // const data = [
-  //     { make: "Porsche", model: "Boxter", price: 72000 },
-  //   { make: "Ford", model: "Mondeo", price: 32000 },
-  //   { make: "Ford", model: "Mondeo", price: 32000 },
-  //   { make: "Toyota", model: "Celica", price: 35000 },
-  //   { make: "Toyota", model: "Celica", price: 35000 },
-  //   { make: "Porsche", model: "Boxter", price: 72000 },
-  //   { make: "Toyota", model: "Celica", price: 35000 },
-  //   { make: "Toyota", model: "Celica", price: 35000 },
-  //   { make: "Porsche", model: "Boxter", price: 72000 },
-  //   { make: "Porsche", model: "Boxter", price: 72000 },
-  //   { make: "Porsche", model: "Boxter", price: 72000 },
-  //   { make: "Toyota", model: "Celica", price: 35000 },
-  //   { make: "Porsche", model: "Boxter", price: 72000 },
-  //   { make: "Ford", model: "Mondeo", price: 32000 },
-  //   { make: "Ford", model: "Mondeo", price: 32000 },
-  //   { make: "Porsche", model: "Boxter", price: 72000 },
-  //   { make: "Porsche", model: "Boxter", price: 72000 },
-  //   { make: "Porsche", model: "Boxter", price: 72000 }
-  // ];
+const Table = () => {
+  // const [rowData, setRowData] = useState();
+
+  const data = [
+      { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Ford", model: "Mondeo", price: 32000 },
+    { make: "Ford", model: "Mondeo", price: 32000 },
+    { make: "Toyota", model: "Celica", price: 35000 },
+    { make: "Toyota", model: "Celica", price: 35000 },
+    { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Toyota", model: "Celica", price: 35000 },
+    { make: "Toyota", model: "Celica", price: 35000 },
+    { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Toyota", model: "Celica", price: 35000 },
+    { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Ford", model: "Mondeo", price: 32000 },
+    { make: "Ford", model: "Mondeo", price: 32000 },
+    { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Porsche", model: "Boxter", price: 72000 }
+  ];
 
   const actionButton = (params) => {
     console.log(params);
@@ -109,11 +110,11 @@ const Table = () => {
 
     ///// API Call /////
 
-  useEffect(() => {
-    fetch("https://www.ag-grid.com/example-assets/row-data.json")
-      .then((res) => res.json())
-      .then((rowData) => setRowData(rowData));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://www.ag-grid.com/example-assets/row-data.json")
+  //     .then((res) => res.json())
+  //     .then((rowData) => setRowData(rowData));
+  // }, []);
 
   return (
     <div className="container my-3">
@@ -143,7 +144,7 @@ const Table = () => {
         style={{ width: "100%", height: 500 }}
       >
         <AgGridReact
-          rowData={rowData}
+          rowData={data}
           columnDefs={coloumns}
           defaultColDef={defaultColDef}
           onGridReady={onGridReady}
@@ -160,5 +161,8 @@ const Table = () => {
     </div>
   );
 };
+
+
+
 
 export default Table;
